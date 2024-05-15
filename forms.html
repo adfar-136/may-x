@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="name">Enter Name:</label>
+        <input type="text" required placeholder="Enter your name" id="name" name="firstName"/><br> <br>
+        <label for="ph">Enter Phone Number:</label>
+        <input type="number"  disabled required min="10" max="100" id="ph" name="number"/><br><br>
+        <label for="email" >Enter Email:</label>
+        <input type="email" id="email" value="a@a.cm" readonly name="email"/><br><br>
+        <!-- <input type="password" placeholder="password" name="" id="">
+        <input type="file" name="" id="">
+        <input type="range" name="" id="">
+        <input type="reset" name="" id="">
+        <input type="date" name="" id=""> -->
+        <label for="gender">Select your gender:</label> <br>
+        <input type="radio" name="gender" value="M">Male
+        <input type="radio" name="gender" value="F">Female
+        <input type="radio" name="gender" value="O">Other
+       <h1>Select your skills</h1>
+        <input type="checkbox" name="" id="">HTML
+        <input type="checkbox" name="" id="">CSS
+        <input type="checkbox" name="" id="">JS
+        <input type="checkbox" name="" id="">React <br>
+       <select name="" id="">
+        <option value="4">React</option>
+        <option value="1">HTML</option>
+        <option value="2">CSS</option>
+        <option value="3" selected>JS</option>
+       </select>
+       <input list="skills">
+       <datalist id="skills">
+        <option value="html">
+        <option value="css">
+        <option value="js">
+        <option value="react">
+       </datalist>
+       <fieldset>
+         <legend>Educational details</legend>
+         <input type="text" name="" id="" placeholder="enter degree name">
+       </fieldset>
+        <br><br>
+        <textarea name="" id="" rows="8" cols="30"></textarea>
+        <input type="submit" value="login">
+    </form>
+</body>
+</html>
