@@ -7,12 +7,14 @@
     <style>
         .container{
             background-color: aqua;
-           
             display: flex;
+            padding: 20px;
             flex-direction: row;
-            justify-content: left;
+            height: 400px;
+           /* justify-content: left;
+            flex-wrap: wrap;
             align-items: start;
-           flex-wrap: wrap;
+            align-content: space-between;*/
             gap: 20px;
         }
         .item{
@@ -25,20 +27,13 @@
 </head>
 <body>
     <div class="container">
-        <div class="item">content1</div>
-        <div class="item">content2</div>
-        <div class="item">content3</div>
-        <div class="item">content4</div>
-        <div class="item">content5</div>
-        <div class="item">content5</div>
-        <div class="item">content5</div>
-        <div class="item">content5</div>
-        <div class="item">content5</div>
-        <div class="item">content5</div>
-        <div class="item">content5</div>
-        <div class="item">content5</div>
-        <div class="item">content5</div>
-        <div class="item">content5</div>
+        <div class="item" style="order: 5;flex-grow:3">content1</div>
+        <div class="item" style="order: 0;">content2</div>
+        <div class="item" style="order: -1;flex-grow:3">content3</div>
+        <div class="item" style="order: 3;align-self:center;">content4</div>
+        <div class="item" style="order: 4;align-self:end;">content5</div>
+        
+        
         
     </div>
 </body>

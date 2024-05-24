@@ -1,0 +1,42 @@
+.container{
+    display: flex;
+}
+@media (min-width:700px){
+    h1{
+        font-size: 100px;
+        color: rgb(246, 78, 78);
+        text-align: center;
+    }
+    .container{
+        background-color: greenyellow;
+        padding: 30px;
+        display: flex;
+    }
+    .container > .item{
+        background-color: blueviolet;
+        padding: 20px;
+        margin: 10px;
+    }
+}
+@media (max-width:492px){
+    h1{
+        font-size: 45px;
+        color: blue;
+        background-color: burlywood;
+    }
+    p{
+        color: red;
+        font-size: large;
+        background-color: aqua;
+    }
+    .container{
+        flex-wrap: wrap;
+    }
+}
+@media (min-width:492px) and (max-width:700px){
+    h1{
+        font-size: 45px;
+        color: rgb(179, 255, 0);
+        background-color: rgb(133, 5, 219);
+    }
+}
