@@ -1,0 +1,11 @@
+let date = new Date()
+console.log(date.toLocaleDateString())
+console.log(date.toLocaleString())
+let date1 = new Date();
+let date2 = new Date("07/11/2023")
+console.log(date1.getTime()/(1000*60*60*24*365))
+console.log((date1-date2)/(1000*60*60*24))
+console.log(date.getFullYear())
+console.log(date.getMonth())
+console.log(date.getDay())
+console.log(date.getDate())
