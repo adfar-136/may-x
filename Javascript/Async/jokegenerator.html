@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="para"></div>
+    <button id="btn">GenerteJoke</button>
+    <script>
+      document.getElementById("btn").addEventListener("click", () => {
+        var data = fetch("https://official-joke-api.appspot.com/random_joke");
+        console.log(data);
+        data
+          .then((result) => {
+            return result.json();
+          })
+          .then((response) => {
+            document.getElementById("para").innerHTML= `
+            <h1>SetUP: ${response.setup}<h1>
+            <h1>Punchline: ${response.punchline}<h1>
+            `
+          });
+      });
+    </script>
+  </body>
+</html>
