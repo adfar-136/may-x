@@ -1,0 +1,75 @@
+
+//jsx code
+import Head from "./components/Header"
+import {Footer} from "./components/Footer"
+function App() {
+  return (
+    <>
+<div className="hello">
+      <h1>Hello React</h1>
+    <Head/>
+      {heading}
+      {main}
+    </div>
+    <Footer/>
+    <Head/>
+   
+    </>
+    
+  );
+}
+// function Header(){
+//   return (
+//     <>
+//      <header>
+//       <h1>header</h1>
+//       <Footer/>
+//      </header>
+//     </>
+//   )
+// }
+// function Footer(){
+//   return (
+//     <>
+//      <footer>
+//       <h1>Footer</h1>
+//      </footer>
+//     </>
+//   )
+// }
+var heading = <h1>Hello welcome</h1>
+var main = <main> 
+  <h1>main</h1>
+  <p>main</p>
+</main>
+export default App;
+
+
+
+//props
+import React from 'react'
+import Course from './components/Course'
+// import About from './components/About'
+// import Blog from './components/Blog'
+// var fName = "Adfar "
+// var phone = 7006525041
+function App() {
+  return (
+    <div>
+      <Course age={25} skills={["HTML","CSS","CSS","JS","REACT"]}/>
+      {/* <About firstName={fName} phone={phone}/>
+      <About firstName="Anshu" phone="7006123456"/>
+      <About firstName="Ashwin" phone="2345678"/>
+      <Blog>
+        <div>
+          <h1>I am children component my blog com</h1>
+        </div>
+        <div>
+          <h1>I am children component my blog com</h1>
+        </div>
+      </Blog> */}
+    </div>
+  )
+}
+
+export default App
