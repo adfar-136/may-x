@@ -1,51 +1,17 @@
 import React from 'react'
+import Counter from './components/Counter';
 
 export default function App() {
-  // var skills = ["a","b","c","d"]
-  var skills= [
-    ["HTML","CSS","JS"],
-    ["Cooking","Dancing","Singing"],
-    [10,9,8]
-  ]
-  var data = [
-      {name:"A",age:10,salary:2000},
-      {name:"B",age:20,salary:3000},
-      {name:"C",age:30,salary:4000},
-      {name:"D",age:40,salary:5000},
-  ]
+  let count = 0;
+  function handleAdd(){
+    console.log("adfar")
+    count++;
+  }
   return (
     <div>
-      <table>
-       <thead>
-       <tr>
-          <th>Name</th>
-          <th>Age</th>
-          <th>Salary</th>
-        </tr>
-       </thead>
-        <tbody>
-          {data.map((item,index)=>{
-              return <tr key={index}>
-                <td>{item.name}</td>
-                <td>{item.age}</td>
-                <td>{item.salary}</td>
-              </tr>
-          })}
-        </tbody>
-      </table>
-      <ul>
-        {skills.map((item,index)=>{
-          return item.map((itemm,indexx)=>{
-            return <li key={indexx}>{itemm}</li>
-          })
-        })}
-      </ul>
-       {/* <ul>
-        {skills.map((item,index)=>{
-          return <li key={index}>{item}</li>
-        })}
-       </ul> */}
-       
+      <Counter/>
+      <h1>Count: {count}</h1>
+      <button onClick={handleAdd}>Add One</button>
     </div>
   )
 }
