@@ -126,3 +126,125 @@ export default function App() {
     </div>
   )
 }
+
+
+//stat intro 
+import React from 'react'
+import Counter from './components/Counter';
+
+export default function App() {
+  let count = 0;
+  function handleAdd(){
+    console.log("adfar")
+    count++;
+  }
+  return (
+    <div>
+      <Counter/>
+      <h1>Count: {count}</h1>
+      <button onClick={handleAdd}>Add One</button>
+    </div>
+  )
+}
+
+
+//theme changer
+import React, { useState } from 'react'
+
+export default function App() {
+  // const [bgColor,setBgColor] = useState("white")
+  // const [text,setText] =useState("Dark")
+  // const [color,setColor] = useState("black")
+  // function handleColor(){
+  //   if(bgColor==="white"){
+  //     setBgColor("black")
+  //     setText("Light")
+  //     setColor("white")
+  //   } else {
+  //     setBgColor("white")
+  //     setText("Dark")
+  //     setColor("black")
+      
+  //   }
+  // }
+  const [condition,setCondition] = useState(true)
+  function handleColor(){
+     setCondition(!condition)
+  }
+  return (
+    <div style={{backgroundColor:condition?"white":"black"}}>
+    <button onClick={handleColor}>{condition?"Dark":"Light"} Mode</button>
+    <h1 style={{color:condition?"black":"white"}}>Hello Morrow</h1>
+  </div>
+    // <div style={{backgroundColor:bgColor,height:"100vh"}}>
+    //   <button onClick={handleColor}>{text} Mode</button>
+    //   <h1 style={{color:color}}>Hello Morrow</h1>
+    // </div>
+    
+  )
+}
+
+//state batching and state scheduling
+import React, { useState } from 'react'
+
+export default function App() {
+  const [count,setCount] = useState(0)
+  function handleAdd(){
+    // setCount(count+1)
+    // setCount(count+1)
+    // setCount(count+1)
+    // setCount(count+1)
+    setCount(count+5)
+    // setCount((prev)=>prev+1)
+    // setCount((prev)=>prev+1)
+    // setCount((prev)=>prev+1)
+   
+  }
+  return (
+    <div>
+      <h1>Count:{count}</h1>
+      <button onClick={handleAdd}>Increment</button>
+    </div>
+  )
+}
+
+//controlledcomponents 
+import React, { useState } from 'react'
+
+export default function App() {
+  const [name,setName] = useState("")
+  const [email,setEmail]= useState("")
+  const [pass,setPass] = useState("")
+  const [condition,setCondition] = useState(false)
+  function handleChange(e){
+   setName(e.target.value)
+  }
+  function handleSubmit(e){
+    e.preventDefault()
+     setCondition(true)
+  }
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input type="text" placeholder='Enter Your Name'
+        value={name} onChange={handleChange}/>
+        <br /><br />
+        <input type="email" placeholder='Enter your Email' 
+        value={email} onChange={(e)=>setEmail(e.target.value)}/>
+  
+        <br /><br />
+        <input type="password" placeholder='Enter Your Password' 
+        value={pass} onChange={(e)=>setPass(e.target.value)}/>
+        <br /><br />
+        <input type="submit" value="Submit" />
+      </form>
+      {condition && (
+        <div>
+        <h1>My Name is {name}</h1>
+        <h1>My Email is {email}</h1>
+        <h1>My Password is {pass}</h1>
+      </div>
+      )}
+    </div>
+  )
+}
