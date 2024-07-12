@@ -248,3 +248,110 @@ export default function App() {
     </div>
   )
 }
+
+import React, { useState } from 'react'
+
+export default function App() {
+  const [input,setInput] = useState({
+    name:"",
+    email:"",
+    password:"",
+  })
+  return (
+    <div>
+      <form>
+        <input type="text" placeholder='Enter Your Name'
+        value={input.name} 
+        onChange={(e)=>setInput((prev)=>({...prev,name:e.target.value}))}/>
+        <br /><br />
+        <input type="email" placeholder='Enter your Email' 
+        value={input.email} 
+        onChange={(e)=>setInput((prev)=>({...prev,email:e.target.value}))}/>
+        <br /><br />
+        <input type="password" placeholder='Enter Your Password'
+        value={input.password} 
+        onChange={(e)=>setInput((prev)=>({...prev,password:e.target.value}))}/>
+        <br /><br />
+        <input type="submit" value="Submit" />
+      </form>
+     
+        <div>
+
+        <h1>My Name is {input.name}</h1>
+        <h1>My Email is {input.email}</h1>
+        <h1>My Password is {input.password}</h1>
+      </div>
+    </div>
+  )
+}
+
+//class class dyanimicality
+import React, { useState } from 'react'
+import "./App.css"
+export default function App() {
+  const [bgcolor,setBgcolor] = useState("red")
+  return (
+    <div className={bgcolor} style={{width:"50vw",height:"50vh"}}>
+      <button onClick={()=>setBgcolor("green")}>Green</button>
+      <button onClick={()=>setBgcolor("blue")}>blue</button>
+      <button onClick={()=>setBgcolor("pink")}>pink</button>
+      <button onClick={()=>setBgcolor("voilet")}>voilet</button>
+      <button onClick={()=>{setBgcolor("yellow")}}>yellow</button>
+    </div>
+  )
+}
+
+
+//component lifecycle
+
+import React, { useState } from 'react'
+
+export default function App() {
+  console.log("Adfar")
+  const [count,setCount] = useState(0)
+  const [condition,setCondition] = useState(false)
+  function handleToggle(){
+    setCondition(!condition)
+  }
+  return (
+    <div>
+      {condition && <Comp1/>}
+      <h1>Adfar</h1>
+      <h2>Count: {count}</h2>
+      <button onClick={handleToggle}>Toggle</button>
+      <button onClick={()=>setCount(count+1)}>Increment</button>
+    </div>
+  )
+}
+function Comp1(){
+  console.log("hello")
+  return (
+    <>
+      <h1>Comp1 displayed</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore vero quasi optio voluptatum facilis numquam adipisci excepturi nam corporis asperiores.</p>
+    </>
+  )
+}
+
+
+
+//useEffect intro 
+
+import React, { useEffect, useState } from 'react'
+
+export default function App() {
+  const [count,setCount] =useState(0)
+  const [number,setNumber] = useState(100)
+  useEffect(()=>{
+    console.log("useEffect")
+  },[count]) 
+  return (
+    <div>
+      <h1>React App</h1>
+      <h1>count:{count}</h1>
+      <button onClick={()=>setCount(count+1)}>+</button>
+      <h1>number:{number}</h1>
+      <button onClick={()=>setNumber(number-1)}>-</button>
+    </div>
+  )
+}
