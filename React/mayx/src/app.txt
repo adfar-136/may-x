@@ -355,3 +355,56 @@ export default function App() {
     </div>
   )
 }
+
+//cleanup function 
+import React, { useEffect, useState } from 'react'
+
+export default function App() {
+  const [count,setCount] =useState(0)
+ 
+  useEffect(()=>{
+    function fun(){
+      console.log("Adfar")
+    }
+    // document.addEventListener("click",fun)
+    // return ()=>{
+    //   document.removeEventListener("click",fun)
+    // }
+    let timer = setInterval(fun,1000)
+    return ()=>{
+      clearInterval(timer)
+    }
+  }) 
+  return (
+    <div>
+      <h1>React App</h1>
+      <h1>count:{count}</h1>
+      <button onClick={()=>setCount(count+1)}>+</button>
+      
+    </div>
+  )
+}
+
+//joke generator
+
+import React, { useEffect, useState } from 'react'
+
+export default function App() {
+  const [joke,setJoke] = useState({})
+  useEffect(()=>{
+      handleJoke()
+  },[])
+  const handleJoke =async ()=>{
+    const data =await fetch("https://official-joke-api.appspot.com/random_joke")
+    const result =await data.json()
+    setJoke(result)
+  }
+  return (
+    <div>
+      <h1>{joke.setup}</h1>
+      <h1>{joke.punchline}</h1>
+      <button onClick={handleJoke}>Fetch Joke</button>
+    </div>
+  )
+}
+
