@@ -1,0 +1,4 @@
+actions 
+reducers 
+store
+redux is predictable
